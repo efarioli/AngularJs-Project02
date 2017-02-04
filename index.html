@@ -96,7 +96,8 @@
     <md-card ng-repeat="classified in classifieds  |
                         filter:category            |
                         filter:classifiedsFilter "
-                        flex="30">
+                        flex="30"
+                        class="classified">
     	<img ng-src="{{classified.image}}">
 
     	<md-card-content>
