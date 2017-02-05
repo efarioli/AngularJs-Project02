@@ -11,6 +11,12 @@ angular
             url: '/classifieds',
             templateUrl: 'components/classifieds/classifieds.tpl.html',
             controller: 'classifiedsCtrl as vm'
+            })
+          $stateProvider
+          .state('classifieds.new', {
+            url: '/new',
+            templateUrl: 'components/classifieds/new/classifieds.new.tpl.html',
+            controller: 'newClassifiedsCtrl as vm'
             });
     
    });
