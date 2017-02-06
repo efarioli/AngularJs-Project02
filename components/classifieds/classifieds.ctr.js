@@ -32,7 +32,12 @@
             vm.classifieds.push(classified);
             showToast('Classified saved!!')
 
-      } )
+      } );
+
+      $scope.$on('editSaved', function(event, message){
+            showToast(message);
+
+      });
 
       var contact = {
       	name: "Leo Messi",
@@ -64,12 +69,10 @@
 	}
 
 	function editClassified(classified) {
-            console.log(classified);
-
-		vm.editing = true;
-		
-            openSidebar();
-            vm.classified = classified;
+            $state.go('classifieds.edit', {
+                  id: classified.id,
+                  classified: classified
+            });
 		
 	}
 
