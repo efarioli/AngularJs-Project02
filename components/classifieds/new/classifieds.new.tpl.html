@@ -6,27 +6,28 @@
     </md-toolbar>
 
     <md-content layout-padding>
+
       <form>
       	<md-input-container>
       		<label for="title">Title</label>
       		<input type="text" id="title"
-      		       ng-model="vm.classified.title"
+      		       ng-model="classified.title"
       		       md-autofocus>      	
       	</md-input-container>
       	<md-input-container>
       		<label for="price">Price</label>
       		<input type="text" id="price"
-      		       ng-model="vm.classified.price">      	
+      		       ng-model="classified.price">      	
       	</md-input-container>
       	<md-input-container>
       		<label for="description">Description</label>
       		<input type="text" id="description"
-      		       ng-model="vm.classified.description">      	
+      		       ng-model="classified.description">      	
       	</md-input-container>
       	<md-input-container>
       		<label for="image">Image Link</label>
       		<input type="text" id="image"
-      		       ng-model="vm.classified.image">      	
+      		       ng-model="classified.image">      	
       	</md-input-container>
       	<md-button ng-if="!editing" ng-click="vm.saveClassified(classified)" class="md-primary">
       		Save

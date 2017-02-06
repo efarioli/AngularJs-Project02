@@ -8,6 +8,7 @@
 
 	  	var vm = this;
 	  	vm.closeSidebar = closeSidebar;
+	  	vm.saveClassified = saveClassified;
 
 	  	$timeout(function() {
 	  		$mdSidenav('left').open();
@@ -28,6 +29,18 @@
 
 	  	function closeSidebar() {
 	  		vm.sidenavOpen = false;
+	  	}
+
+	  	function saveClassified(classified) {
+	  		if(classified) {
+	  			classified.contact = {
+	  				name: "Leo Messi",
+	  				phone: "074556665452",
+	  				email: "leo@messi.com"
+	  			};
+	  			$scope.$emit('newClassified', classified);
+	  			vm.sidenavOpen = false;
+	  		}
 	  	}
 
 	  });

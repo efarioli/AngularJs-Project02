@@ -27,6 +27,13 @@
 
       });
 
+      $scope.$on('newClassified', function(event, classified) {
+            classified.id = vm.classifieds.length +1;
+            vm.classifieds.push(classified);
+            showToast('Classified saved!!')
+
+      } )
+
       var contact = {
       	name: "Leo Messi",
       	phone: "074556665452",
