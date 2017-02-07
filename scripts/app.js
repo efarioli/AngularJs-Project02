@@ -1,6 +1,6 @@
 angular
     .module('ngClassifieds', ['ngMaterial', 'ui.router', 'firebase'])
-    .config(function($mdThemingProvider, $stateProvider) {
+    .config(function($mdThemingProvider, $stateProvider,  $urlRouterProvider) {
 
         $mdThemingProvider.theme('default')
             .primaryPalette('teal')
@@ -26,6 +26,8 @@ angular
             params: {
               classified: null
             }
-            });
+            })
+          $urlRouterProvider
+            .otherwise('/classifieds');;
     
    });
