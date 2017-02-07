@@ -19,13 +19,18 @@
       vm.classified;
       vm.editing;
 
-      classifiedsFactory.getClassifieds().then(function(classifieds){      	
-      	vm.classifieds = classifieds.data;
-      	vm.categories = getCategories(vm.classifieds);
-      	//console.log($scope.categories);
+      vm.classifieds = classifiedsFactory.ref;
+      vm.classifieds.$loaded().then(function(classifieds){
+            vm.categories = getCategories(classifieds);
+      })
+
+      // classifiedsFactory.getClassifieds().then(function(classifieds){      	
+      // // 	vm.classifieds = classifieds.data;
+      // // 	vm.categories = getCategories(vm.classifieds);
+      // 	//console.log($scope.categories);
 
 
-      });
+      // });
 
       $scope.$on('newClassified', function(event, classified) {
             classified.id = vm.classifieds.length +1;
@@ -123,7 +128,7 @@
       		});
 
       		return _.uniq(categories);
-      	};
+      	}
 
     });
 
