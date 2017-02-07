@@ -15,7 +15,6 @@
 	  	} );
 
 	  	$scope.$watch('vm.sidenavOpen', function(sidenav) {
-	  		console.log(sidenav);
 	  		if(sidenav === false) {
 
 	  			$mdSidenav('left')
