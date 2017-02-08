@@ -20,7 +20,7 @@
 
 	  		var vm = this;
 	  		vm.editClassified = editClassified;
-	  		vm.deleteClassified = editClassified;
+	  		vm.deleteClassified = deleteClassified;
 
 
 	  		////////////////
@@ -32,6 +32,7 @@
 	        }
 
 	        function deleteClassified (event, classified) {
+	        	console.log("paso por aca");
 	        	var confirm = $mdDialog.confirm()
 	        	.title('Are you sure you want to delete ' +  classified.title + '?')
 	        	.ok('Yes')
